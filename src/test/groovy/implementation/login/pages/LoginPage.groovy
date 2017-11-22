@@ -32,6 +32,18 @@ class LoginPage extends PageObjects {
     @FindBy(className = "register")
     WebElement createNewAccountButton
 
+    @AndroidFindBy(xpath = "//*[@id=\"login-card\"]/div[2]/div[1]/div/div")
+    @FindBy(xpath = "//*[@id=\"login-card\"]/div[2]/div[1]/div/div")
+    WebElement usernameFieldError
+
+    @AndroidFindBy(xpath = "//*[@id=\"login-card\"]/div[2]/div[2]/div/div")
+    @FindBy(xpath = "//*[@id=\"login-card\"]/div[2]/div[2]/div/div")
+    WebElement passwordFieldError
+
+    @AndroidFindBy(xpath = "//*[@id=\"toast-container\"]/div/div")
+    @FindBy(xpath = "//*[@id=\"toast-container\"]/div/div")
+    WebElement toastMessage
+
     LoginPage(Device device) {
         super(device)
     }
