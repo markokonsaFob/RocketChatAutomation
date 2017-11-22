@@ -60,4 +60,31 @@ class LoginActionsMobileIOSApp implements ILoginActions, ActionsMobileIOSApp {
     void clickRegister() {
         click(loginPage.getCreateNewAccountButton())
     }
+
+    /**
+     * Verifies if username field error is visible
+     * @return
+     */
+    @Override
+    boolean isUsernameFieldErrorVisible() {
+        return isDisplayed(loginPage.usernameFieldError())
+    }
+
+    /**
+     * Verifies if password field error is visible
+     * @return
+     */
+    @Override
+    boolean isPasswordFieldErrorVisible() {
+        return isDisplayed(loginPage.passwordFieldError())
+    }
+
+    /**
+     * Verifies if toast message error is visible
+     * @return
+     */
+    @Override
+    boolean isToastMessagedErrorVisible() {
+        return isDisplayed(loginPage.getToastMessage())
+    }
 }
