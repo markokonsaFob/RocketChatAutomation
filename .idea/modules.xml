@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RocketChatAutomation.iml" filepath="$PROJECT_DIR$/RocketChatAutomation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rocketapp.iml" filepath="$PROJECT_DIR$/.idea/modules/rocketapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rocketapp_main.iml" filepath="$PROJECT_DIR$/.idea/modules/rocketapp_main.iml" group="rocketapp" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rocketapp_test.iml" filepath="$PROJECT_DIR$/.idea/modules/rocketapp_test.iml" group="rocketapp" />
+    </modules>
+  </component>
+</project>

@@ -10,7 +10,7 @@
       "appPackage": "chat.rocket.android",
       "appActivity": ".activity.MainActivity",
       "fullReset": "true",
-      "remote": ""
+      "remote": "http://0.0.0.0:4723/wd/hub"
     },
     "browser": {
       "UIType": "DesktopWeb",
@@ -19,13 +19,13 @@
     "ios": {
       "capability": "iphone",
       "UIType": "MobileIOSApp",
-      "udid": "",
+      "udid": "a04757611e60e0e647cfc6e698617e8efe1e6231",
       "app": "https://s3-eu-west-1.amazonaws.com/rocket-chat-applications/RocketChat.ipa",
       "deviceName": "iPhone",
       "platformName": "iOS",
       "automationName": "XCUITest",
       "fullReset": "true",
-      "remote": ""
+      "remote": "http://0.0.0.0:4723/wd/hub"
     }
   }
 }
