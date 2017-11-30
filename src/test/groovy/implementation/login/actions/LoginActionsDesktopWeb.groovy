@@ -60,4 +60,32 @@ class LoginActionsDesktopWeb implements ILoginActions, ActionsDesktopWeb {
     void clickRegister() {
         click(loginPage.getCreateNewAccountButton())
     }
+
+    /**
+     * Verifies if username field error is visible
+     * @return
+     */
+    @Override
+    boolean isUsernameFieldErrorVisible() {
+        return isDisplayed(loginPage.getUsernameFieldError())
+    }
+
+    /**
+     * Verifies if password field error is visible
+     * @return
+     */
+    @Override
+    boolean isPasswordFieldErrorVisible() {
+        return isDisplayed(loginPage.getPasswordFieldError())
+    }
+
+    /**
+     * Verifies if toast message error is visible
+     * @return
+     */
+    @Override
+    boolean isToastMessagedErrorVisible() {
+        return isDisplayed(loginPage.getToastMessage())
+
+    }
 }
