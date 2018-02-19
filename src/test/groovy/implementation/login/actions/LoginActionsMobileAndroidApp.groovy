@@ -1,13 +1,14 @@
 package implementation.login.actions
 
 import implementation.login.pages.LoginPage
+import io.cify.framework.actions.ActionsMobileAndroidApp
 import io.cify.framework.actions.ActionsMobileIOSApp
 import io.cify.framework.core.Device
 
 /**
  * Created by FOB Solutions
  */
-class LoginActionsMobileAndroidApp implements ILoginActions, ActionsMobileIOSApp {
+class LoginActionsMobileAndroidApp implements ILoginActions, ActionsMobileAndroidApp {
 
     Device device
     LoginPage loginPage

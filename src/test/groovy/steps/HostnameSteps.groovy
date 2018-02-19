@@ -4,6 +4,7 @@ import cucumber.api.groovy.EN
 import cucumber.api.groovy.Hooks
 import implementation.ActionsImpl
 import implementation.RocketTestException
+import implementation.TestDataManager
 
 /**
  * Created by FOB Solutions
@@ -17,9 +18,11 @@ Then(~/^hostname view should be visible$/) { ->
         throw new RocketTestException("Host view should be visible!")
     }
 }
-When(~/^user enters "([^"]*)" into hostname$/) { String hostname ->
-    ActionsImpl.getHostActions().enterHostname(hostname)
+
+When(~/^user enters valid hostname into hostname field$/) { ->
+    ActionsImpl.getHostActions().enterHostname(TestDataManager.getWebURL())
 }
+
 And(~/^user clicks on select button$/) { ->
     ActionsImpl.getHostActions().submit()
 }

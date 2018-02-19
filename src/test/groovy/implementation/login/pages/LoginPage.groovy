@@ -22,7 +22,7 @@ class LoginPage extends PageObjects {
     @FindBy(id = "pass")
     WebElement passwordField
 
-    @iOSFindBy(accessibility = "Next:")
+    @iOSFindBy(accessibility = "Go")
     @AndroidFindBy(id = "chat.rocket.android:id/btn_login_with_email")
     @FindBy(className = "login")
     WebElement nextButton
