@@ -24,10 +24,8 @@ class LoginActionsDesktopWeb implements ILoginActions, ActionsDesktopWeb {
      */
     @Override
     boolean isLoginPageVisible() {
-        return ActionsWrapper.waitForCondition(device, {
-            isDisplayed(loginPage.getUsernameField()) &&
-                    isDisplayed(loginPage.getPasswordField())
-        }, 30)
+        return isDisplayed(loginPage.getUsernameField()) &&
+                isDisplayed(loginPage.getPasswordField())
     }
 
     /**
