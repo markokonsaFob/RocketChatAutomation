@@ -1,5 +1,6 @@
 package implementation.login.actions
 
+import implementation.ActionsWrapper
 import implementation.login.pages.LoginPage
 import io.cify.framework.actions.ActionsDesktopWeb
 import io.cify.framework.core.Device
@@ -23,8 +24,10 @@ class LoginActionsDesktopWeb implements ILoginActions, ActionsDesktopWeb {
      */
     @Override
     boolean isLoginPageVisible() {
-        return isDisplayed(loginPage.getUsernameField()) &&
-                isDisplayed(loginPage.getPasswordField())
+        return ActionsWrapper.waitForCondition(device, {
+            isDisplayed(loginPage.getUsernameField()) &&
+                    isDisplayed(loginPage.getPasswordField())
+        }, 30)
     }
 
     /**
