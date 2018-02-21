@@ -14,11 +14,6 @@ import io.cify.framework.core.DeviceManager
 this.metaClass.mixin(cucumber.api.groovy.Hooks)
 this.metaClass.mixin(EN)
 
-
-Before {
-
-}
-
 Before("@LoggedInUsers") {
 
     GParsPool.withPool {

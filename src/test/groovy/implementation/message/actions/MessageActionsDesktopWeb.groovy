@@ -2,8 +2,9 @@ package implementation.message.actions
 
 import implementation.message.pages.MessagePage
 import io.cify.framework.actions.ActionsDesktopWeb
-import io.cify.framework.actions.ActionsMobileIOSApp
 import io.cify.framework.core.Device
+
+import static implementation.ActionsWrapper.waitForCondition
 
 /**
  * Created by FOB Solutions
@@ -43,8 +44,10 @@ class MessageActionsDesktopWeb implements IMessageActions, ActionsDesktopWeb {
      */
     @Override
     boolean isMessageVisible(String message) {
-        messagePage.getTextViews().find {
-            it.getText() == message
-        }
+        waitForCondition(device, {
+            messagePage.getTextViews().find {
+                it.getText() == message
+            }
+        }, 60)
     }
 }

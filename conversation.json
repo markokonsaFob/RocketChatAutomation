@@ -1,0 +1,42 @@
+{
+  "1": {
+    "BROWSER": "Hello iPhone!",
+    "IOS": "Hey!"
+  },
+  "2": {
+    "BROWSER": "How are you feeling today?",
+    "IOS": "I'm feeling great! How about you?"
+  },
+  "3": {
+    "BROWSER": "I'm really glad I have the opportunity to be here!",
+    "IOS": "Have you heard about Cify platform already?"
+  },
+  "4": {
+    "BROWSER": "No, what about it?",
+    "IOS": "It is a open source test automation framework for mobile and desktop devices."
+  },
+  "5": {
+    "BROWSER": "Sounds cool! What are the main features?",
+    "IOS": "First of all, devices can communicate with each other, you don't have to build different tests for different platforms anymore!"
+  },
+  "6": {
+    "BROWSER": "Wow! That's awesome!",
+    "IOS": "Actually I'm using it at the moment"
+  },
+  "7": {
+    "BROWSER": "So with this framework I could automate applications like Uber?",
+    "IOS": "Yes, exactly, you can build automation scripts from driver to customer and automate the whole flow!"
+  },
+  "8": {
+    "BROWSER": "Where can I learn more about it?",
+    "IOS": "Well, it's open source, you can take a look at https://github.com/fobsolutions but you can always ask for Marko from the booth."
+  },
+  "9": {
+    "BROWSER": "Can Marko answer to my questions about the technical implementation as well?",
+    "IOS": "Yes, he knows everything about the framework and would be happy to answer!"
+  },
+  "10": {
+    "BROWSER": "Thanks, it was nice talking with you!",
+    "IOS": "No problem, enjoy your day!"
+  }
+}

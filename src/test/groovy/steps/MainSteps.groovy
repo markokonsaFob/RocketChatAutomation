@@ -49,3 +49,24 @@ Then(~/^message should be visible on (.+) device$/) { DeviceCategory category ->
 When(~/^user open "([^"]*)" channel on (.+) device$/) { String channelName, DeviceCategory category ->
     ActionsImpl.getSidebarActions(category).clickOnUsername(channelName)
 }
+Then(~/^(.+) and (.+) are having a conversation with each other$/) {DeviceCategory category1, DeviceCategory category2 ->
+    TestDataManager.getConversation().each {
+
+        String question = it.getValue()[category1.toString()]
+        String answer = it.getValue()[category2.toString()]
+
+        ActionsImpl.getMessageActions(category1).sendMessage(question)
+
+        if (!ActionsImpl.getMessageActions(category2).isMessageVisible(question)) {
+            throw new RocketTestException("Message with text: " + question + " should be visible")
+        }
+
+        ActionsImpl.getMessageActions(category2).sendMessage(answer)
+
+        if (!ActionsImpl.getMessageActions(category1).isMessageVisible(answer)) {
+            throw new RocketTestException("Message with text: " + answer + " should be visible")
+        }
+
+    }
+
+}

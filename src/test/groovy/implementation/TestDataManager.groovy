@@ -7,6 +7,7 @@ import io.cify.framework.core.DeviceCategory
 class TestDataManager {
 
     private static final String DATA_FILE_NAME = "data.json"
+    private static final String CONVO_FILE_NAME = "conversation.json"
 
     private static ThreadLocal<LazyMap> testData = new ThreadLocal<>([:])
     private static ThreadLocal<DeviceCategory> activeDevice = new ThreadLocal<DeviceCategory>()
@@ -37,6 +38,16 @@ class TestDataManager {
         File dataFile = new File(DATA_FILE_NAME)
         if (!dataFile.exists()) throw new RocketTestException("Data file is missing from project root. Please add $DATA_FILE_NAME into project root")
         new JsonSlurper().parse(new File(DATA_FILE_NAME)) as LazyMap
+    }
+
+    /**
+     * Returns all test data from file
+     * @return LazyMap of test data
+     */
+    static LazyMap getConversation() {
+        File dataFile = new File(CONVO_FILE_NAME)
+        if (!dataFile.exists()) throw new RocketTestException("Conversation file is missing from project root. Please add $CONVO_FILE_NAME into project root")
+        new JsonSlurper().parse(new File(CONVO_FILE_NAME)) as LazyMap
     }
 
     /**
