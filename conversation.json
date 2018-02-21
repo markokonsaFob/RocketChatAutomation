@@ -35,7 +35,7 @@
     "BROWSER": "Can Marko answer to my questions about the technical implementation as well?",
     "IOS": "Yes, he knows everything about the framework and would be happy to answer!"
   },
-  "10": {
+  "99": {
     "BROWSER": "Thanks, it was nice talking with you!",
     "IOS": "No problem, enjoy your day!"
   }
