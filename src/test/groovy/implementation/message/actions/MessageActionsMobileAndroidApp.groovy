@@ -53,7 +53,7 @@ class MessageActionsMobileAndroidApp implements IMessageActions, ActionsMobileAn
     boolean isMessageVisible(String message) {
         waitForCondition(device, {
             messagePage.getTextViews().find {
-                it.getText().contains(message)
+                it.getText() == message
             }
         }, 60)
     }
