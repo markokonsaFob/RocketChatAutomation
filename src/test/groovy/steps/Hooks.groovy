@@ -16,8 +16,8 @@ Before("@LoggedInUsers") {
 
     GParsPool.withPool {
         GParsPool.executeAsyncAndWait(
-                //{ loginWithMobileDevice(DeviceCategory.ANDROID) },
-                //{ loginWithMobileDevice(DeviceCategory.IOS) },
+                { loginWithMobileDevice(DeviceCategory.ANDROID) },
+                { loginWithMobileDevice(DeviceCategory.IOS) },
                 { loginWithMobileDevice(DeviceCategory.BROWSER) }
         )
     }
