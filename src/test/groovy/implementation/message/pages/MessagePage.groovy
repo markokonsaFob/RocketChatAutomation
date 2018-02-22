@@ -24,7 +24,7 @@ class MessagePage extends PageObjects {
 
     @AndroidFindBy(className = "android.widget.TextView")
     @iOSFindBy(className = "XCUIElementTypeTextView")
-    @FindBy(css = ".message .body")
+    @FindBy(className = "body")
     List<WebElement> textViews
 
     MessagePage(Device device) {
