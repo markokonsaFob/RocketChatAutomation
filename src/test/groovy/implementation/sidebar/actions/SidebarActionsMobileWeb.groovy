@@ -1,5 +1,6 @@
 package implementation.sidebar.actions
 
+import implementation.RocketTestException
 import implementation.sidebar.pages.SidebarPage
 import io.cify.framework.actions.ActionsDesktopWeb
 import io.cify.framework.core.Device
@@ -23,11 +24,29 @@ class SidebarActionsMobileWeb implements ISidebarActions, ActionsDesktopWeb {
      */
     @Override
     boolean isSidebarVisible() {
-        if (isDisplayed(mainPage.getMenuButton())) {
-            click(mainPage.getMenuButton())
-            return isDisplayed(mainPage.getSidebar())
-        } else {
+        try {
+            if (isDisplayed(mainPage.getMenuButton())) {
+                click(mainPage.getMenuButton())
+                return isDisplayed(mainPage.getSidebar())
+            } else {
+                return false
+            }
+        } catch (ignored) {
             return false
+        }
+    }
+
+    /**
+     * Opens sidebar
+     */
+    @Override
+    void openSidebar() {
+        if (!isDisplayed(mainPage.getSidebar())) {
+            try {
+                click(mainPage.getMenuButton())
+            } catch (ignored) {
+                throw new RocketTestException("Menu button is not visible and sidebar is not opened!")
+            }
         }
     }
 

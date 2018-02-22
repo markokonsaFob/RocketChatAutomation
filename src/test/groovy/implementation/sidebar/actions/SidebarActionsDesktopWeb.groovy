@@ -27,6 +27,14 @@ class SidebarActionsDesktopWeb implements ISidebarActions, ActionsDesktopWeb {
     }
 
     /**
+     * Opens sidebar
+     */
+    @Override
+    void openSidebar() {
+
+    }
+
+    /**
      * Clicks on a username in sidebar
      * @param accountName
      */

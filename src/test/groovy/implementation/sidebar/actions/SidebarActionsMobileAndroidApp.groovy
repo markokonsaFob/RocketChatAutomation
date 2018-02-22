@@ -1,6 +1,7 @@
 package implementation.sidebar.actions
 
 import implementation.ActionsWrapper
+import implementation.RocketTestException
 import implementation.sidebar.pages.SidebarPage
 import io.appium.java_client.MobileBy
 import io.cify.framework.actions.ActionsMobileAndroidApp
@@ -31,6 +32,20 @@ class SidebarActionsMobileAndroidApp implements ISidebarActions, ActionsMobileAn
             return isDisplayed(sidebarPage.getSidebar())
         } else {
             return false
+        }
+    }
+
+    /**
+     * Opens sidebar
+     */
+    @Override
+    void openSidebar() {
+        if (!isDisplayed(sidebarPage.getSidebar())) {
+            try {
+                click(sidebarPage.getMenuButton())
+            } catch (ignored) {
+                throw new RocketTestException("Menu button is not visible and sidebar is not opened!")
+            }
         }
     }
 

@@ -12,6 +12,11 @@ interface ISidebarActions {
     boolean isSidebarVisible()
 
     /**
+     * Opens sidebar
+     */
+    void openSidebar()
+
+    /**
      * Clicks on a username in sidebar
      * @param accountName
      */
