@@ -18,13 +18,13 @@ class MessagePage extends PageObjects {
     WebElement messageBox
 
     @AndroidFindBy(id = "button_send")
-    @FindBy(className = "rc-message-box__action--send")
+    @FindBy(className = "rc-message-box__send")
     @iOSFindBy(accessibility = "sendMessage")
     WebElement sendButton
 
     @AndroidFindBy(className = "android.widget.TextView")
     @iOSFindBy(className = "XCUIElementTypeTextView")
-    @FindBy(className = "body")
+    @FindBy(css = ".message .body")
     List<WebElement> textViews
 
     MessagePage(Device device) {
