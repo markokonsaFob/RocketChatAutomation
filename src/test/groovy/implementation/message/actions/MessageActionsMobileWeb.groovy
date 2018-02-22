@@ -35,7 +35,7 @@ class MessageActionsMobileWeb implements IMessageActions, ActionsDesktopWeb {
     @Override
     void sendMessage(String message) {
         sendKeys(messagePage.getMessageBox(), message)
-        click(messagePage.getSendButton())
+        click(messagePage.getSendMobileWebButton())
     }
 
     /**
@@ -46,9 +46,7 @@ class MessageActionsMobileWeb implements IMessageActions, ActionsDesktopWeb {
     @Override
     boolean isMessageVisible(String message) {
         waitForCondition(device, {
-            messagePage.getTextViews().find {
-                it.getText() == message
-            }
+            messagePage.getTextViews().last().getText() == message
         }, 60)
     }
 }

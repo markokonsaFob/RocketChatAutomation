@@ -41,7 +41,16 @@ class ActionsWrapper {
         while (accept) {
             try {
                 waitForCondition(device, {
-                    autoAcceptAndroidBrowser(device)
+                    if (device.getCapabilities().getCapability("capability") == "android") {
+                        autoAcceptAndroidBrowser(device)
+                    } else {
+                        try {
+                            (device.getDriver() as MobileDriver).switchTo().alert().accept()
+                            return true
+                        } catch (ignored) {
+                            return false
+                        }
+                    }
                 }, 10)
             } catch (ignored) {
                 accept = false
