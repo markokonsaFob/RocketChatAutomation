@@ -1,6 +1,8 @@
 package implementation
 
+import io.appium.java_client.MobileDriver
 import io.cify.framework.core.Device
+import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.support.ui.ExpectedCondition
 import org.openqa.selenium.support.ui.WebDriverWait
@@ -30,4 +32,31 @@ class ActionsWrapper {
         }
     }
 
+    /**
+     * Automatically dismiss alerts
+     * */
+    static void autoAcceptAlerts(Device device) {
+        boolean accept = true
+
+        while (accept) {
+            try {
+                waitForCondition(device, {
+                    autoAcceptAndroidBrowser(device)
+                }, 10)
+            } catch (ignored) {
+                accept = false
+            }
+        }
+    }
+
+    private static boolean autoAcceptAndroidBrowser(Device device) {
+        try {
+            (device.getDriver() as MobileDriver).context("NATIVE_APP").findElement(By.id("button1")).click()
+            device.getDriver().findElement(By.id("com.android.packageinstaller:id/permission_allow_button")).click()
+            return true
+        } catch (ignored) {
+            (device.getDriver() as MobileDriver).context("CHROMIUM")
+            return false
+        }
+    }
 }

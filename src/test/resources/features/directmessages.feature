@@ -8,5 +8,4 @@ Feature: Direct cross-platform messenger
     When user open "mwc-fobsolutions" channel on IOS device
     And user open "mwc-fobsolutions" channel on ANDROID device
     And user open "mwc-fobsolutions" channel on BROWSER device
-    Then direct messenger view should be visible on ANDROID device
     Then BROWSER and IOS are having a conversation with each other

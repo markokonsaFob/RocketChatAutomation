@@ -18,7 +18,7 @@ class MessagePage extends PageObjects {
     WebElement messageBox
 
     @AndroidFindBy(id = "button_send")
-    @FindBy(className = "rc-message-box__send")
+    @FindBy(className = "rc-message-box__action--send")
     @iOSFindBy(accessibility = "sendMessage")
     WebElement sendButton
 

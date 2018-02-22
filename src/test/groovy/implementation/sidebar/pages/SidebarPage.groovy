@@ -21,6 +21,7 @@ class SidebarPage extends PageObjects{
 
     @iOSFindBy(accessibility = "Menu")
     @AndroidFindBy(id = "chat.rocket.android:id/drawee_server_button")
+    @FindBy(className = "burger")
     WebElement menuButton
 
     @iOSFindBy(xpath = "//XCUIElementTypeApplication[@name=\"Rocket.Chat+\"]/XCUIElementTypeWindow[1]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[2]/XCUIElementTypeTextField/XCUIElementTypeTextField")

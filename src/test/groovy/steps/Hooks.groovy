@@ -4,10 +4,12 @@ import cucumber.api.groovy.EN
 import groovyx.gpars.GParsPool
 import implementation.Account
 import implementation.ActionsImpl
+import implementation.ActionsWrapper
 import implementation.RocketTestException
 import implementation.TestDataManager
 import implementation.hostname.actions.IHostnameActions
 import implementation.login.actions.ILoginActions
+import io.cify.framework.core.Device
 import io.cify.framework.core.DeviceCategory
 import io.cify.framework.core.DeviceManager
 
@@ -30,12 +32,13 @@ After {
 }
 
 private static loginWithMobileDevice(DeviceCategory category) {
-    DeviceManager.getInstance().createDevice(category)
+   DeviceManager.getInstance().createDevice(category)
 
     ActionsImpl.getCoreActions(category).openApplication()
 
     if (category == DeviceCategory.BROWSER) {
-        DeviceManager.getInstance().getActiveDevice(DeviceCategory.BROWSER).getDriver().get(TestDataManager.getWebURL())
+        DeviceManager.getInstance().getActiveDevice(category).getDriver().get(TestDataManager.getWebURL())
+        ActionsWrapper.autoAcceptAlerts(DeviceManager.getInstance().getActiveDevice(category))
     } else {
         IHostnameActions hostActions = ActionsImpl.getHostActions(category)
         if (!hostActions.isHostViewVisible()) {
