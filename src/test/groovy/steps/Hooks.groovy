@@ -2,14 +2,10 @@ package steps
 
 import cucumber.api.groovy.EN
 import groovyx.gpars.GParsPool
-import implementation.Account
-import implementation.ActionsImpl
-import implementation.ActionsWrapper
-import implementation.RocketTestException
-import implementation.TestDataManager
+import implementation.*
 import implementation.hostname.actions.IHostnameActions
 import implementation.login.actions.ILoginActions
-import io.cify.framework.core.Device
+import implementation.sidebar.actions.ISidebarActions
 import io.cify.framework.core.DeviceCategory
 import io.cify.framework.core.DeviceManager
 
@@ -20,8 +16,8 @@ Before("@LoggedInUsers") {
 
     GParsPool.withPool {
         GParsPool.executeAsyncAndWait(
-                { loginWithMobileDevice(DeviceCategory.ANDROID) },
-                { loginWithMobileDevice(DeviceCategory.IOS) },
+                //{ loginWithMobileDevice(DeviceCategory.ANDROID) },
+                //{ loginWithMobileDevice(DeviceCategory.IOS) },
                 { loginWithMobileDevice(DeviceCategory.BROWSER) }
         )
     }
@@ -32,7 +28,7 @@ After {
 }
 
 private static loginWithMobileDevice(DeviceCategory category) {
-   DeviceManager.getInstance().createDevice(category)
+    DeviceManager.getInstance().createDevice(category)
 
     ActionsImpl.getCoreActions(category).openApplication()
 
@@ -48,13 +44,16 @@ private static loginWithMobileDevice(DeviceCategory category) {
         hostActions.submit()
     }
 
-    ILoginActions loginActions = ActionsImpl.getLoginActions(category)
-    if (!loginActions.isLoginPageVisible()) {
-        throw new RocketTestException("Login page should be visible")
-    }
+    ISidebarActions sidebarActions = ActionsImpl.getSidebarActions(category)
+    if (!sidebarActions.isSidebarVisible()) {
+        ILoginActions loginActions = ActionsImpl.getLoginActions(category)
+        if (!loginActions.isLoginPageVisible()) {
+            throw new RocketTestException("Login page should be visible")
+        }
 
-    Account account = TestDataManager.getAccount(category.toString())
-    loginActions.enterUsername(account.getUsername())
-    loginActions.enterPassword(account.getPassword())
-    loginActions.clickLogin()
+        Account account = TestDataManager.getAccount(category.toString())
+        loginActions.enterUsername(account.getUsername())
+        loginActions.enterPassword(account.getPassword())
+        loginActions.clickLogin()
+    }
 }
