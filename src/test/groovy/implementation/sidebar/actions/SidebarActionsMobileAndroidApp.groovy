@@ -1,12 +1,14 @@
 package implementation.sidebar.actions
 
-import implementation.ActionsWrapper
 import implementation.RocketTestException
 import implementation.sidebar.pages.SidebarPage
 import io.appium.java_client.MobileBy
+import io.appium.java_client.MobileDriver
+import io.appium.java_client.TouchAction
 import io.cify.framework.actions.ActionsMobileAndroidApp
 import io.cify.framework.core.Device
 import org.openqa.selenium.WebElement
+import org.openqa.selenium.support.ui.ExpectedConditions
 
 /**
  * Created by FOB Solutions
@@ -27,12 +29,7 @@ class SidebarActionsMobileAndroidApp implements ISidebarActions, ActionsMobileAn
      */
     @Override
     boolean isSidebarVisible() {
-        if (isDisplayed(sidebarPage.getMenuButton())) {
-            click(sidebarPage.getMenuButton())
-            return isDisplayed(sidebarPage.getSidebar())
-        } else {
-            return false
-        }
+        return isDisplayed(sidebarPage.getSidebar())
     }
 
     /**
@@ -40,12 +37,14 @@ class SidebarActionsMobileAndroidApp implements ISidebarActions, ActionsMobileAn
      */
     @Override
     void openSidebar() {
-        if (!isDisplayed(sidebarPage.getSidebar())) {
-            try {
-                click(sidebarPage.getMenuButton())
-            } catch (ignored) {
-                throw new RocketTestException("Menu button is not visible and sidebar is not opened!")
-            }
+        try {
+            waitForCondition(device, ExpectedConditions.visibilityOf(sidebarPage.getSidebar()), 30)
+            new TouchAction(device.getDriver() as MobileDriver)
+                    .press(sidebarPage.getMenuButton())
+                    .moveTo(sidebarPage.getMenuButton().getSize().getWidth(), 100)
+                    .release().perform()
+        } catch (ignored) {
+            throw new RocketTestException("Menu button is not visible and sidebar is not opened!")
         }
     }
 
@@ -82,4 +81,5 @@ class SidebarActionsMobileAndroidApp implements ISidebarActions, ActionsMobileAn
             it.getText() == text
         })
     }
+
 }

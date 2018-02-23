@@ -1,6 +1,5 @@
 package steps
 
-import cucumber.api.PendingException
 import cucumber.api.groovy.EN
 import cucumber.api.groovy.Hooks
 import implementation.ActionsImpl
@@ -69,4 +68,7 @@ Then(~/^(.+) and (.+) are having a conversation with each other$/) {DeviceCatego
 
     }
 
+}
+Given(~/^user opens sidebar on (.+) device$/) { DeviceCategory category ->
+   ActionsImpl.getSidebarActions(category).openSidebar()
 }
