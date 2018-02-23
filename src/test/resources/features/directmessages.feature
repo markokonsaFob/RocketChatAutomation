@@ -2,9 +2,8 @@ Feature: Direct cross-platform messenger
 
   @LoggedInUsers
   Scenario: User sends direct cross-platform message
-    Given sidebar is visible on ANDROID device
+    Given user opens sidebar on ANDROID device
     And sidebar is visible on IOS device
-    And sidebar is visible on BROWSER device
     When user open "mwc-fobsolutions" channel on IOS device
     And user open "mwc-fobsolutions" channel on ANDROID device
     And user open "mwc-fobsolutions" channel on BROWSER device
