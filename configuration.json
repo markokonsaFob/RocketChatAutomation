@@ -1,16 +1,18 @@
 {
-  "videoRecord": true,
+  "videoRecord": false,
   "videoDir": "build/cify/videos/",
   "capabilities": {
     "android": {
       "capability": "android",
       "UIType": "MobileAndroidApp",
-      "deviceName": "Android Device",
+      "deviceName": "Huawei BTV",
+      "browserName": "",
       "app": "https://s3-eu-west-1.amazonaws.com/rocket-chat-applications/RocketChat.apk",
       "appPackage": "chat.rocket.android",
       "appActivity": ".activity.MainActivity",
       "fullReset": "true",
-      "remote": ""
+      "udid": "CNT6R17626000034",
+      "remote": "http://10.11.13.186:9000/wd/hub"
     },
     "browser": {
       "UIType": "DesktopWeb",
@@ -19,13 +21,15 @@
     "ios": {
       "capability": "iphone",
       "UIType": "MobileIOSApp",
-      "udid": "",
-      "app": "https://s3-eu-west-1.amazonaws.com/rocket-chat-applications/RocketChat.ipa",
-      "deviceName": "iPhone",
-      "platformName": "iOS",
-      "automationName": "XCUITest",
-      "fullReset": "true",
-      "remote": ""
+      "deviceName": "iPhone 8 Plus",
+      "automationName":"XCUITest",
+      "app": "fi.dna.matkatv",
+      "noReset": "false",
+      "startIWDP": "true",
+      "browserName": "",
+      "useJSONSource": "true",
+      "webkitResponseTimeout":7000,
+      "remote": "http://10.11.13.186:9000/wd/hub"
     }
   }
 }

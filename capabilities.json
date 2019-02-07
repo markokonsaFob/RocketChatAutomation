@@ -10,36 +10,48 @@
       {
         "capability": "iphone",
         "UIType": "MobileIOSApp",
-        "udid": "auto",
-        "app": "https://s3-eu-west-1.amazonaws.com/rocket-chat-applications/RocketChat.ipa",
-        "deviceName": "iPhone",
+        "browserName": "",
+        "deviceName": "iPhone 8 Plus",
         "platformName": "iOS",
-        "automationName": "XCUITest",
-        "fullReset": "true"
+        "udid": "6c22edeecbfb550b435b34261ee321da2068f79f",
+        "app": "com.apple.mobilenotes",
+        "fullReset": "false",
+        "automationName": "XCUITest"
+      },
+      {
+        "capability": "ipad",
+        "UIType": "MobileIOSApp",
+        "browserName": "",
+        "deviceName": "iPad 5th Gen",
+        "platformName": "iOS",
+        "udid": "6cf912be0eaa5b8d91832b8bdaf68a2244a96cb3",
+        "app": "com.apple.mobilenotes",
+        "fullReset": "false",
+        "automationName": "XCUITest"
       }
     ],
     "android": [
       {
         "capability": "android",
         "UIType": "MobileAndroidApp",
-        "deviceName": "Android Device",
+        "deviceName": "Samsung Galaxy S7",
         "browserName": "",
         "app": "https://s3-eu-west-1.amazonaws.com/rocket-chat-applications/RocketChat.apk",
         "appPackage": "chat.rocket.android",
         "appActivity": ".activity.MainActivity",
         "fullReset": "true",
-        "udid": "091609ec1a801705"
+        "udid": "ce0917199a45c73c03"
       },
       {
         "capability": "android",
         "UIType": "MobileAndroidApp",
-        "deviceName": "Android Device 2",
+        "deviceName": "Huawei BTV",
         "browserName": "",
         "app": "https://s3-eu-west-1.amazonaws.com/rocket-chat-applications/RocketChat.apk",
         "appPackage": "chat.rocket.android",
         "appActivity": ".activity.MainActivity",
         "fullReset": "true",
-        "udid": "ce06160685cb041102"
+        "udid": "CNT6R17626000034"
       }
     ]
   }

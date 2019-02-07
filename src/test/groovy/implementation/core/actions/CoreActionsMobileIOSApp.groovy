@@ -23,7 +23,6 @@ class CoreActionsMobileIOSApp implements ICoreActions, ActionsMobileIOSApp {
     @Override
     void openApplication() {
         device.openApp()
-        autoAcceptAlerts()
     }
 
     /**
