@@ -14,8 +14,10 @@
         "deviceName": "iPhone 8 Plus",
         "platformName": "iOS",
         "udid": "6c22edeecbfb550b435b34261ee321da2068f79f",
+        "wdaLocalPort": "8101",
         "app": "com.apple.mobilenotes",
         "fullReset": "false",
+        "useNewWDA": "true",
         "automationName": "XCUITest"
       },
       {
@@ -24,9 +26,11 @@
         "browserName": "",
         "deviceName": "iPad 5th Gen",
         "platformName": "iOS",
+        "wdaLocalPort": "8102",
         "udid": "6cf912be0eaa5b8d91832b8bdaf68a2244a96cb3",
         "app": "com.apple.mobilenotes",
         "fullReset": "false",
+        "useNewWDA": "true",
         "automationName": "XCUITest"
       }
     ],
